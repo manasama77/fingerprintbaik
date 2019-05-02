@@ -57,3 +57,6 @@ $route['mesin'] = 'CoreController/index';
 $route['mesin_data'] = 'CoreController/data';
 $route['mesin_ip_save'] = 'CoreController/ip_save';
 $route['mesin_password_save'] = 'CoreController/password_save';
+
+$route['karyawan'] = 'MKaryawanController/index';
+$route['karyawan_get_karyawan_finger'] = 'MKaryawanController/get_karyawan_finger';

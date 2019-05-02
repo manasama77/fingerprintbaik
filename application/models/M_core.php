@@ -8,6 +8,12 @@ class M_core extends CI_Model {
     return $this->db->get($table);
   }
 
+  public function get_single_data($table, $where)
+  {
+    $this->db->where($where);
+    return $this->db->get($table);
+  }
+
   public function update($table, $where, $arr)
   {
     $this->db->trans_begin();
