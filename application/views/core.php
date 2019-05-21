@@ -18,7 +18,18 @@
   <script src="<?=base_url();?>vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="<?=base_url();?>vendor/blockui/jquery.blockUI.js"></script>
   <script src="<?=base_url();?>vendor/jquery-editable/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
+  <script src="<?=base_url();?>vendor/jquery-validation/jquery.validate.min.js"></script>
+  <script src="<?=base_url();?>vendor/jquery-validation/additional-methods.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
   <!-- END CORE JS -->
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-html5-1.5.6/datatables.min.css"/>
+ 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-html5-1.5.6/datatables.min.js"></script>
+  
 </head>
 
 <body id="page-top">
@@ -52,3 +63,16 @@
 
 
 <script src="<?=base_url();?>assets/js/sb-admin-2.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $.ajax({
+      url: 'http://simpres.baytulikhtiar.com/api/cutoff',
+      method: 'get',
+      dataType: 'json'
+    })
+    .done(function(result){
+      $('#awal').text(result.awal);
+      $('#akhir').text(result.akhir);
+    });
+  });
+</script>

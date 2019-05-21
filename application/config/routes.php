@@ -59,4 +59,13 @@ $route['mesin_ip_save'] = 'CoreController/ip_save';
 $route['mesin_password_save'] = 'CoreController/password_save';
 
 $route['karyawan'] = 'MKaryawanController/index';
+$route['karyawan/data'] = 'MKaryawanController/data';
+$route['karyawan/create'] = 'MKaryawanController/create';
 $route['karyawan_get_karyawan_finger'] = 'MKaryawanController/get_karyawan_finger';
+$route['karyawan_set_karyawan_finger/(:num)/(:any)/(:any)'] = 'MKaryawanController/set_karyawan_finger/$1/$2/$3';
+$route['karyawan_destroy_karyawan_finger/(:num)'] = 'MKaryawanController/destroy_karyawan_finger/$1';
+
+$route['attendance'] = 'MAttendanceController/index';
+$route['attendance/data'] = 'MAttendanceController/data';
+$route['attendance/dataSend'] = 'MAttendanceController/data_send';
+$route['attendance/sync'] = 'MAttendanceController/sync';
