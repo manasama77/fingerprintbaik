@@ -4,6 +4,7 @@
   </button>
 
   <ul class="navbar-nav ml-auto">
-    <!--div class="topbar-divider d-none d-sm-block"></div-->
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <p><strong id="awal">2019-01-01</strong> <small>s/d</small> <strong id="akhir">2019-02-20</strong></p>
   </ul>
 </nav>
