@@ -91,6 +91,17 @@ class MKaryawanController extends CI_Controller {
     if($ip != "")
     {
       $Connect = fsockopen($ip, "80", $errno, $errstr, 1);
+
+      if(!$Connect){
+        http_response_code(400);
+        $return = [
+          'code' => 400,
+          'description' => '[X002]Tidak terkoneksi dengan finger print, silahkan coba kembali',
+        ];
+
+        echo json_encode($return);
+        exit();
+      }
       /*if($Connect)
       {*/
         //$soap_request="<GetUserInfo><ArgComKey xsi:type=\"xsd:integer\">".$password_mesin."</ArgComKey><Arg><PIN xsi:type=\"xsd:integer\">All</PIN><Name xsi:type=\"xsd:integer\">All</Name></Arg></GetUserInfo>";

@@ -82,7 +82,7 @@
 
     // FORM VALIDATE
     $('#form').validate({
-      debug: true,
+      debug: false,
       errorClass: 'help-inline text-danger',
       rules:{
         nama:{
@@ -126,6 +126,14 @@
                 text: 'Not connect with database.',
                 type: 'error'
               });
+            },
+            400: function() {
+              $.unblockUI();
+              Swal.fire({
+                title: 'Warning!',
+                text: 'Not connect with Fingerprint.',
+                type: 'error'
+              });
             }
           }
         })
@@ -144,6 +152,8 @@
               type: 'error'
             });
           }
+
+          getData();
           $.unblockUI();
         });
       }
